@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs'); %>
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+</head>
+<body>
+    <%- include('../partials/header.ejs'); %>
+    <section class="form-section">
+      <div class="form-container">
+        <form method="POST" action="/register">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input name="email" type="email" class="form-control" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text helpTextEmail">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input name="password" type="password" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input name="username" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input name="name" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="surname" class="form-label">Surname</label>
+                <input name="surname" type="text" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div>
+    </section>
+    <%- include('../partials/footer.ejs'); %>
+</body>
+</html>

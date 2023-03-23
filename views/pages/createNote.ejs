@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs'); %>
+    <link rel="stylesheet" type="text/css" href="/css/createNote.css">
+    <body>
+        <%- include('../partials/header.ejs'); %>
+        <section class="form-section">
+            <div class="form-container">
+                <form method="POST" action="/notes/create">
+                    <div class="form-floating">
+                        <textarea name="content" class="form-control form-textArea" placeholder="Leave a note here" id="floatingTextarea2"></textarea>
+                        <label for="floatingTextarea2">Please write your notes</label>
+                    </div>
+                    <div class="mb-3 noteName">
+                        <label for="name" class="form-label">Nombre</label>
+                        <input name="name" type="text" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+            </div>
+        </section>
+
+        <%- include('../partials/footer.ejs'); %>
+    </body>
+</html>

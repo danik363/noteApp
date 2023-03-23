@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head.ejs'); %>
+    <link rel="stylesheet" href="css/notes.css">
+</head>
+<body>
+    <%- include('../partials/header.ejs'); %>
+    <section class="cards-section">
+        <div class="cards-container">
+            <% for (let i = 0; i < notes.length; i++) { %>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= notes[i].name %></h5>
+                        <p class="card-text"><%= notes[i].content %></p>
+                        <a href= <%= `/notes/edit/${notes[i]._id}` %> class="btn btn-primary">Editar</a>
+                        <a href= <%= `/notes/delete/${notes[i]._id}` %> class="btn btn-primary">Eliminar</a>
+                    </div>
+                </div>
+            <% } %>
+            
+        </div>
+        <a href="/notes/create" class="btn btn-primary">Create new note</a>
+    </section>
+   
+    
+    <%- include('../partials/footer.ejs'); %>
+</body>
+</html>

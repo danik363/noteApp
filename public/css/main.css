@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 18px;
+}
+:root{
+    --soft-violet: #37306B;
+    --soft-purple: #66347F;
+    --soft-pink: #D27685;
+    --soft-peach: #9E4784;
+    --red: #A10035;
+
+}
+body{
+    width: 100vw;
+    background: var(--soft-violet);
+    overflow-x: hidden;
+}
+.messageError{
+    display: block;
+    background: var(--red);
+    width: 70vw;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 20px;
+}
+.messageError:empty{
+    display: none;
+}
+
+
