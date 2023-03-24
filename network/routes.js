@@ -1,5 +1,4 @@
 const home = require("../components/home/network.js");
-const user = require("../components/user/network.js");
 const notes = require("../components/notes/network.js");
 const errors = require("../components/errors/network.js");
 

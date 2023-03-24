@@ -1,7 +1,6 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 require("dotenv").config(".env");
-const response = require("./sysMessages/response.js");
 const routes = require("./network/routes.js");
 const db = require("./database.js");
 const passport = require("passport");

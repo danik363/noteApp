@@ -11,6 +11,8 @@ router.get("/", (req, res) => {
     res.render("login.ejs");
   }
 });
+
+//Renderiza register
 router.get("/register", (req, res) => {
   if (req.isAuthenticated()) {
     res.redirect("/notes");
@@ -47,11 +49,6 @@ router.post(
     failureFlash: true,
   })
 );
-
-//Renderiza plantilla de login
-// router.get('/login', (req, res)=>{
-//     res.render('login.ejs');
-// });
 
 //Midleware de autenticacion de usuario
 router.post(
