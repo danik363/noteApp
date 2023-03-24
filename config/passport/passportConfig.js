@@ -51,8 +51,8 @@ passport.use('local-signin', new LocalStrategy({
     passwordField: 'password',
     passReqToCallback: true
     },async (req, username, password, done) => {
-    const user = await User.findOne({email:username});
-    bcrypt.compare(password, user.password)
+    let user = await User.findOne({email:username});
+    bcrypt.compare(password, user ? user.password : '*')
       .then((result)=>{
         if(result) {
           return done(null, user);
