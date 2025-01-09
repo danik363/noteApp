@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   if (req.isAuthenticated()) {
     res.redirect("/notes");
   } else {
-    res.render("login.ejs");
+    res.render("pages/login.ejs");
   }
 });
 
@@ -17,7 +17,7 @@ router.get("/register", (req, res) => {
   if (req.isAuthenticated()) {
     res.redirect("/notes");
   } else {
-    res.render("register.ejs");
+    res.render("pages/register.ejs");
   }
 });
 

@@ -7,7 +7,7 @@ router.get("/", isAuthenticated, (req, res) => {
   controller
     .listNotes({ userId: req.user._id })
     .then((notes) => {
-      res.status(200).render("notes.ejs", { notes: notes });
+      res.status(200).render("pages/notes.ejs", { notes: notes });
     })
     .catch((err) => {
       res.status(500).redirect("/errors/500");
@@ -15,7 +15,7 @@ router.get("/", isAuthenticated, (req, res) => {
 });
 
 router.get("/create", isAuthenticated, (req, res) => {
-  res.render("createNote.ejs");
+  res.render("pages/createNote.ejs");
 });
 router.post("/create", isAuthenticated, (req, res) => {
   controller
@@ -36,7 +36,7 @@ router.get("/edit/:id", isAuthenticated, ownerAuth, (req, res) => {
   controller
     .listNotes({ _id: req.params.id })
     .then((note) => {
-      res.status(200).render("editNote.ejs", { note: note[0] });
+      res.status(200).render("pages/editNote.ejs", { note: note[0] });
     })
     .catch((err) => {
       res.status(500).redirect("/errors/404");

@@ -6,14 +6,16 @@ const db = require("./database.js");
 const passport = require("passport");
 const session = require("express-session");
 const flash = require("connect-flash");
+const path = require("path");
 
 ///Inicializando
 const app = express();
 db.connection(process.env.DB);
 require("./config/passport/passportConfig.js");
 
+console.log(path.join(__dirname, 'views'))
 ///Configuraciones
-app.set("views", `${__dirname}/views/pages`);
+app.set("views", path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 
 ///MidleWares de terceros
