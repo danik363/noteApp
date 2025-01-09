@@ -13,8 +13,7 @@ db.connection(process.env.DB);
 require("./config/passport/passportConfig.js");
 
 ///Configuraciones
-
-app.set("views", "./views/pages");
+app.set("views", `${__dirname}/views/pages`);
 app.set("view engine", "ejs");
 
 ///MidleWares de terceros
